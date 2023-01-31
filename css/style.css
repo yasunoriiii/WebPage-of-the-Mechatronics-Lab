@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* Variables */
+:root {
+    --primary: #000000;
+    --secondary: #e7e7e7;
+}
+
+/* Base Styles */
+body {
+    color: var(--primary);
+}
+img {
+    max-width: 100%;
+}
+main {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/*header*/
+#header {
+    height:150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:linear-gradient(10deg,white 20%, lightblue);
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+}
+.logo img{
+    height: 100px;
+    width: 100px;
+}
+.contact , .navigation {
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    font-size: 1.25rem;
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
+    gap:4rem;
+}
+
+/*HeightMinというクラス名がついたら高さを小さく、上部固定に*/
+#header.HeightMin{
+    position: fixed;/*固定する*/
+    z-index: 999;/*最前面へ*/
+    height:100px;
+    top:0;/*位置指定*/
+    left:0;/*位置指定*/
+    /*animation: DownAnime 0.5s forwards;*/
+}
+
+/*main-item*/
+.main-item{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/*title*/
+.title {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    margin-bottom: -11rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem;
+}
+.title p {
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 124%;
+    letter-spacing: -0.04em;
+}
+.title h2 {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 10rem;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+                -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+                0px 1px 0 #FFF,  0 -1px 0 #FFF,
+                -1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+.image {
+    background-color: var(--secondary);
+    width: 100%;
+}
+.image img {
+    object-fit: cover;
+}
+
+/*contents*/
+.contents {
+    display: flex;
+    justify-content:stretch;
+    width: 80%;
+    margin:auto;
+    padding-top: 10px;
+}
+.contents_img {
+    width: calc(100% / 2 - 30px);
+    margin-bottom: 30px;
+    padding: 50px 10px;
+}
+.contents_img img{
+    object-fit: cover;
+}
+.contents_txt {
+    width: 75%;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 70px 50px;
+}
+.contents_txt h3{
+    font-size:1.50rem;
+}
+.contents_txt p{
+    line-height: 150%;
+    font-size:1.25rem;
+    margin-top:30px;
+}
+
+/*slider*/
+.slider img {
+    width:100%;/*スライダー内の画像を横幅100%に*/
+    height:auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+    margin:0 10px;/*スライド左右の余白調整*/
+}
+
